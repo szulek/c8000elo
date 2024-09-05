@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<style>
+    html, body {
+    align-items: normal !important;
+    }
+</style>
+
+<head>
+    <title>Club8000</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<script>
+    const apiUrl = 'http://localhost:3000/';
+    let login;
+    let game = 0;
+
+    function doSomething() {
+        login = document.getElementById('login').value;
+        if(login != "IDDQD") {
+            alert("Błąd autoryzacji");
+            return false;
+        }
+        else {
+            hide();
+            loadAllCars();
+        }
+        return false;
+    }
+
+    function hide() {
+        var x = document.getElementById("loginForm");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function loadAllCars() {
+        fetch(apiUrl + "cars")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                for (let i = 0; i < data.length; i++) {
+                    myFunction1(data[i].name, data[i].link, data[i].id, data[i].score);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+
+    function myFunction1(caption, image, ident, number) {
+        const div = document.createElement("div");
+        div.setAttribute("class", "polaroid");
+        div.setAttribute("id", "car-" + number);
+        div.setAttribute("ident", ident);
+        const img = document.createElement("img");
+        img.setAttribute("src", image);
+        const h3 = document.createElement("h3");
+        const text = document.createTextNode(caption);
+        h3.setAttribute("class", "caption");
+        h3.appendChild(text);
+        div.appendChild(img);
+        div.appendChild(h3);
+
+        const h4 = document.createElement("h4");
+        const textScore = document.createTextNode("Wynik: " + number);
+        h4.setAttribute("class", "caption");
+        h4.appendChild(textScore);
+
+        div.appendChild(h4);
+
+        const element = document.getElementById("div1");
+        element.appendChild(div);
+    }
+</script>
+
+<body>
+    <div id="loginForm" class="polaroid">
+        <form method="get" onsubmit="return doSomething();" id="login-form" class="login-form" autocomplete="off"
+            role="main">
+            <img class="logo" src="images/logo.png">
+            <h1 class="a11y-hidden">Jastarnia8000</h1>
+            <div>
+                <label class="label-email">
+                    <input id="login" type="password" class="text" name="code" placeholder="kod" tabindex="1" required />
+                    <span class="required">kod</span>
+                </label>
+            </div>
+            <input type="submit" value="Autoryzuj" />
+        </form>
+    </div>
+    <div id="div1" class="maxWidth">
+
+    </div>
+
+</body>
+
+</html>

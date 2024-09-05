@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Club8000</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<script>
+    const apiUrl = 'http://localhost:3000/';
+    let login;
+    let game = 0;
+
+    function doSomething() {
+        login = document.getElementById('login').value;
+        var payload = {
+            "login": login,
+            "games": 0
+        };
+
+        fetch(apiUrl + "user",
+            {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload)
+            })
+            .then((res) => {
+                if (res.status == 409) {
+                    alert("Uzytkownik juz istnieje");
+                }
+                else {
+                    hide();
+                    loadCars();
+                }
+                console.log(res);
+            })
+        return false;
+    }
+
+    function hide() {
+        var x = document.getElementById("loginForm");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        const h3 = document.createElement("h3");
+        const text = document.createTextNode("Wybierz jeden z poniższych samochodów:");
+        h3.setAttribute("class", "caption");
+        h3.setAttribute("id", "carSelect");
+        h3.appendChild(text);
+        const element = document.getElementById("div1");
+        element.appendChild(h3);
+    }
+
+    function loadCars() {
+        fetch(apiUrl + "carsForGame")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                for (let i = 0; i < data.length; i++) {
+                    myFunction1(data[i].name, data[i].link, data[i].id, i, true);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+
+    function myFunction1(caption, image, ident, number, addOnclick) {
+        const div = document.createElement("div");
+        div.setAttribute("class", "polaroid");
+        div.setAttribute("id", "car-" + number);
+        if (addOnclick) {
+            div.setAttribute("onclick", "newGame(" + number + ")");
+        }
+        div.setAttribute("ident", ident);
+        const img = document.createElement("img");
+        img.setAttribute("src", image);
+        const h3 = document.createElement("h3");
+        const text = document.createTextNode(caption);
+        h3.setAttribute("class", "caption");
+        h3.appendChild(text);
+        div.appendChild(img);
+        div.appendChild(h3);
+        const element = document.getElementById("div1");
+        element.appendChild(div);
+    }
+
+    function endGame() {
+        let carSelect = document.getElementById("carSelect");
+        if (null != carSelect) {
+            carSelect.remove();
+        }
+        myFunction1("Dziękujemy za udział, do zobaczenia na kolejnych edycjach!", "images/logo.png", "", 0, false);
+    }
+
+    function newGame(number) {
+        let car0 = document.getElementById("car-0");
+        let car1 = document.getElementById("car-1");
+
+        var payload = {
+            "player1": car0.getAttribute("ident"),
+            "player2": car1.getAttribute("ident"),
+            "wins": number
+        };
+
+        fetch(apiUrl + "game",
+            {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload)
+            })
+            .then((res) => {
+                console.log(res);
+                game++;
+
+                if (null != car0) {
+                    car0.remove();
+                }
+
+                if (null != car1) {
+                    car1.remove();
+                }
+                if (game < 10) {
+                    loadCars();
+                }
+                else {
+                    endGame();
+                }
+            })
+
+
+
+    }
+</script>
+
+<body>
+    <div id="loginForm" class="polaroid">
+        <form method="get" onsubmit="return doSomething();" id="login-form" class="login-form" autocomplete="off"
+            role="main">
+            <img class="logo" src="images/logo.png">
+            <h1 class="a11y-hidden">Jastarnia8000</h1>
+            <div>
+                <label class="label-email">
+                    <input id="login" type="text" class="text" name="login" placeholder="login" tabindex="1" required />
+                    <span class="required">login</span>
+                </label>
+            </div>
+            <input type="submit" value="Rozpocznij" />
+        </form>
+    </div>
+    <div id="div1" class="maxWidth">
+
+    </div>
+
+</body>
+
+</html>

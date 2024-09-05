@@ -1,0 +1,467 @@
+
+@hostname = http://localhost:3000
+
+POST {{hostname}}/car
+Content-Type: application/json
+
+{
+        "name": "Porshe Cayman",
+        "link" : "https://i.imgur.com/H3pTP9b.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Honda Integra DC5",
+        "link" : "https://i.imgur.com/FmXfoA7.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Złoty Pociąg",
+        "link" : "https://i.imgur.com/lfwgxNR.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Lexus GS300",
+        "link" : "https://i.imgur.com/9QEYQ94.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mazda MX5 Żółta",
+        "link" : "https://i.imgur.com/UgJMgGQ.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E46 Coupe",
+        "link" : "https://i.imgur.com/BOt8HSe.jpeg",
+        "score": 1000
+}
+
+###
+
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Honda Civic EM2",
+        "link" : "https://i.imgur.com/QkI38sS.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Lexus ISF",
+        "link" : "https://i.imgur.com/9qEaG8j.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Opel Omega",
+        "link" : "https://i.imgur.com/tGVbkR6.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mazda MX5 Torówa",
+        "link" : "https://i.imgur.com/cxs7YWv.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mazda MX5 Torówa",
+        "link" : "https://i.imgur.com/cxs7YWv.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E46 Coupe Insignia",
+        "link" : "https://i.imgur.com/VkpL159.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E39 Kompresor",
+        "link" : "https://i.imgur.com/9xu7oDo.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Chmurka",
+        "link" : "https://i.imgur.com/i1nDgOr.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW ale to Civic",
+        "link" : "https://i.imgur.com/7RQzbtS.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Renault Megane RS",
+        "link" : "https://i.imgur.com/afOwQTC.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Nissan Micra",
+        "link" : "https://i.imgur.com/hVNipfo.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E36 Cabrio Granatowe",
+        "link" : "https://i.imgur.com/fWRoGMu.jpeg",
+        "score": 1000
+}
+
+###
+
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E36 Cabrio Fioletowe",
+        "link" : "https://i.imgur.com/KugQSdx.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mercedes 190",
+        "link" : "https://i.imgur.com/sPiiWXw.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mercedes CLK",
+        "link" : "https://i.imgur.com/pcVJMnq.jpeg",
+        "score": 1000
+}
+
+###
+
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Nissan Calibra",
+        "link" : "https://i.imgur.com/2KIULxn.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E90 RHD",
+        "link" : "https://i.imgur.com/U4tSNyu.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Toyota Celica",
+        "link" : "https://i.imgur.com/LsGah53.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Renault Megane Sedan",
+        "link" : "https://i.imgur.com/5VYabGA.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Toyota Yaris",
+        "link" : "https://i.imgur.com/VMy8bqL.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Lexus IS200",
+        "link" : "https://i.imgur.com/MBNxX0W.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Honda Civic ED Missmatch",
+        "link" : "https://i.imgur.com/jG3BYb3.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Toyota Cresta",
+        "link" : "https://i.imgur.com/AwCehIc.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Honda Civic ED",
+        "link" : "https://i.imgur.com/mxG1q19.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Subaru Impreza",
+        "link" : "https://i.imgur.com/XoouuwY.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Lexus IS",
+        "link" : "https://i.imgur.com/FLhmctp.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Toyota MR2 V6",
+        "link" : "https://i.imgur.com/VKIazI4.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mazda MX5 NB",
+        "link" : "https://i.imgur.com/QxPed0l.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mercedes A124",
+        "link" : "https://i.imgur.com/Woup831.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E90",
+        "link" : "https://i.imgur.com/Vq8zFeU.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Volkswagen Jetta",
+        "link" : "https://i.imgur.com/lsA46uI.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E46 Sedan",
+        "link" : "https://i.imgur.com/6Jppj3q.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Mazda RX8",
+        "link" : "https://i.imgur.com/RMwj7GP.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "BMW E36 Commpact",
+        "link" : "https://i.imgur.com/1T7knfB.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Nissan 300ZX",
+        "link" : "https://i.imgur.com/uaHrzFC.jpeg",
+        "score": 1000
+}
+
+###
+
+POST http://localhost:3000/car
+Content-Type: application/json
+
+{
+        "name": "Toyota MR2",
+        "link" : "https://i.imgur.com/7hxXKye.jpeg",
+        "score": 1000
+}
+
+###
