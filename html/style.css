@@ -1,6 +1,6 @@
 .polaroid {
     height: auto;
-    width: 40.3%;
+    width: 90%;
     background-color: white;
     border-radius: 25px;
     box-shadow: 2px 4px 8px 3px Gainsboro;
@@ -36,7 +36,8 @@
 }
 
 html, body {
-    align-items: center;
+    zoom: 1.5;
+    /* align-items: center; */
     background: #ffffff;
     border: 0;
     display: flex;
