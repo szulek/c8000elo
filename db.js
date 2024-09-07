@@ -1,14 +1,26 @@
-const { MongoClient, ObjectId } = require('mongodb')
+const { MongoClient, ObjectId, ServerApiVersion  } = require('mongodb')
+
+const uri = "mongodb+srv://szulkowsky:kRm2yZaF2V9LFMpq@c8000.fj31d.mongodb.net/?retryWrites=true&w=majority&appName=c8000";
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
 
 const connectionUrl = 'mongodb://localhost:27017'
 const dbName = 'club8000'
 
 let db
 
-const init = () =>
-  MongoClient.connect(connectionUrl, { useNewUrlParser: true }).then((client) => {
+const init = () => 
+  client.connect().then((client) => {
     db = client.db(dbName)
   })
+  // MongoClient.connect(connectionUrl, { useNewUrlParser: true }).then((client) => {
+  //   db = client.db(dbName)
+  // })
 
 const insertItem = (item) => {
   const collection = db.collection('cars')
